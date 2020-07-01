@@ -1,12 +1,10 @@
-export default (async (url='http://sheshbesh.nikfrank.com/', port=9222, timeout=200000)=>{
+export default (async (url='http://example.com/', port=9222, timeout=200000)=>{
   
   const process = Deno.run({
     cmd: [
       //'google-chrome',
-      //'chromium-browser',
-      '../pptr-web/node_modules/puppeteer/.local-chromium/'+
-      'linux-756035/chrome-linux/chrome',
-      
+      //'chrome-browser',
+      '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome',
       '--headless',
       '--remote-debugging-port='+port,
       url,
