@@ -4,7 +4,7 @@
 import {
   runChrome.
   puppeteer,
-} from 'https://denopkg.com/nikfrank/deno-puppeteer-adapter/index.js';
+} from 'https://denopkg.com/mjleitch/deno-puppeteer-adapter/index.js';
 
 
 const [process, ws] = await runChrome();
