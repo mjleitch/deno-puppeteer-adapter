@@ -1,3 +1,5 @@
+import puppeteer from './puppeteer-web.js';
+
 export default async (url = 'chrome://newtab/', port = 9222, timeout = 200000) => {
 
     const process = Deno.run({
