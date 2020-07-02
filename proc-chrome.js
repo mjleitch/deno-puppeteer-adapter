@@ -3,6 +3,7 @@ export default async (url = 'chrome://newtab/', port = 9222, timeout = 200000) =
     const process = Deno.run({
         cmd: [
             '/Applications/Chromium.app/Contents/MacOS/Chromium',
+            '--headless',
             '--remote-debugging-port=' + port,
             '--no-first-run',
             '--no-default-browser-check', 
@@ -22,7 +23,7 @@ export default async (url = 'chrome://newtab/', port = 9222, timeout = 200000) =
     await wait(900);
 
     const tabs = await fetch(`http://localhost:${port}/json`).then(r => r.json());
-console.log(tabs);
+
     const socketUrl = tabs
         .find((tab = {
             url: null
